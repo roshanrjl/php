@@ -2,7 +2,6 @@
 @section('content')
    <body class="bg-gray-100 text-gray-800">
 
-    <!-- Contact Form -->
     <section class="container mx-auto my-12 p-6 bg-white shadow-md rounded-lg max-w-2xl">
         <h2 class="text-3xl font-bold mb-6 text-center text-gray-700">Contact Us</h2>
         <form action="#" method="POST" class="space-y-4">
