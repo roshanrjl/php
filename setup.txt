@@ -1,0 +1,14 @@
+for authentication :
+composer requred laravel/breeze --dev;
+
+step2:
+php artisan breeze install
+ 
+step 3:
+php artisan migrate
+
+step:
+npm install(node js chai xa)
+
+step 5:
+npm run dev

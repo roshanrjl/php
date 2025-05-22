@@ -14,6 +14,10 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
 </head>
 
 <body class="font-sans antialiased">
@@ -23,8 +27,8 @@
             <h1 class="text-center font-bold text-xl my-5">Logo</h1>
             <nav class="flex flex-col gap-2 px-4">
                 <a href="/dashboard" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Dashboard</a>
-                <a href="/users" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Categories</a>
-                <a href="/settings" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Product</a>
+                <a href="/categories" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Categories</a>
+                <a href="/product" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Product</a>
                 <a href="/orders" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Orders</a>
                 <a href="/logout" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Logout</a>
             </nav>
@@ -32,9 +36,9 @@
 
         <!-- Main Content -->
         <div class="flex-1 p-6">
-            <h2 class="text-2xl font-semibold mb-4">Dashboard</h2>
+            <h2 class="text-2xl font-semibold mb-4">@yield('title')</h2>
             <div class="bg-white p-4 rounded shadow">
-                Content here
+               <div>@yield('content')</div>
             </div>
         </div>
     </div>
