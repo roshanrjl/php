@@ -29,7 +29,7 @@
                 <a href="/dashboard" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Dashboard</a>
                 <a href="/categories" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Categories</a>
                 <a href="/product" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Product</a>
-                <a href="/orders" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Orders</a>
+                <a href="/order" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Orders</a>
                 <a href="/logout" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Logout</a>
             </nav>
         </div>
