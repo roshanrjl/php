@@ -18,10 +18,18 @@ Route::get('/contact', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+// categories routes
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+Route::post('/categories/store', [CategoryController::class, 'store'])->name('categories.store');
+// products route
 
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories. index');
 Route::get('/product', [ProductController::class, 'productIndex'])->name('products.productIndex');
-Route::get('/order',[OrderController::class,'OrderIndex'])->name('orders.orderIndex');
+
+// order route
+Route::get('/order', [OrderController::class, 'OrderIndex'])->name('orders.orderIndex');
+
+// Route for middleware
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,4 +37,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -11,4 +11,23 @@ class CategoryController extends Controller
 
       return view('categories.index');
     }
+    public function create()
+    {
+
+     return view('categories.create');
+    }
+    public function store(Request $request)
+    {
+     $data= $request->validate([
+        'order'=>'required',
+        'name'=>'required'
+      ]);
+      dd($data);
+   
+
+    }
+   
+
+
+  
 }
