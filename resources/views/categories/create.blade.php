@@ -4,18 +4,29 @@
 @section('content')
 <div class="max-w-xl mx-auto mt-10 bg-white shadow-md rounded-lg p-6">
     <h2 class="text-2xl font-bold mb-6">Add New Category</h2>
-    <form action="{{route('categories.store')}}" method="POST" class="space-y-4">
+    <form action="{{ route('categories.store') }}" method="POST" class="space-y-4">
         @csrf
-        <!-- Category Name -->
+
+        <!-- Order Field -->
         <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Order</label>
-            <input type="number" name="name" id="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+            <label for="order" class="block text-sm font-medium text-gray-700">Order</label>
+            <input type="text" name="order" id="order" 
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                value="{{ old('order') }}">
+            @error('order')
+                <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+            @enderror
         </div>
 
-        <!-- Order -->
+        <!-- Category Name Field -->
         <div>
-            <label for="order" class="block text-sm font-medium text-gray-700">Category Name</label>
-            <input type="text" name="order" id="order" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
+            <label for="name" class="block text-sm font-medium text-gray-700">Category Name</label>
+            <input type="text" name="name" id="name" 
+                class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                value="{{ old('name') }}">
+            @error('name')
+                <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- Submit and Cancel -->

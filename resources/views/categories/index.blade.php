@@ -25,36 +25,20 @@
                     <th class="px-6 py-3 border-b text-right">Action</th>
                 </tr>
             </thead>
+            @foreach($categories as $catagory)
             <tbody class="text-gray-700 text-sm">
                 <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-3 border-b">1</td>
-                    <td class="px-6 py-3 border-b">Electronics</td>
+                    <td class="px-6 py-3 border-b">{{$catagory->name}}</td>
+                    <td class="px-6 py-3 border-b">{{$catagory->order}}</td>
                    
                     <td class="px-6 py-3 border-b text-right space-x-2">
                         <button class="text-blue-500 hover:underline">Edit</button>
                         <button class="text-red-500 hover:underline">Delete</button>
                     </td>
                 </tr>
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-3 border-b">2</td>
-                    <td class="px-6 py-3 border-b">Clothing</td>
-                  
-                    <td class="px-6 py-3 border-b text-right space-x-2">
-                        <a href="#" class="text-blue-500 hover:underline">Edit</a>
-                        <a href="#" class="text-red-500 hover:underline">Delete</a>
-                    </td>
-
-                </tr>
-                <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-3 border-b">3</td>
-                    <td class="px-6 py-3 border-b">Books</td>
-                  
-                    <td class="px-6 py-3 border-b text-right space-x-2">
-                        <button class="text-blue-500 hover:underline">Edit</button>
-                        <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                </tr>
+               
             </tbody>
+            @endforeach
         </table>
     </div>
 </div>
