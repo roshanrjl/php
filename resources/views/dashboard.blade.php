@@ -42,7 +42,7 @@
         </div>
         <div>
             <h3 class="text-xl font-medium text-gray-900">Total Categories</h3>
-            <p class="text-gray-600 text-lg font-semibold">12</p>
+            <p class="text-gray-600 text-lg font-semibold">{{$totalcategories}}</p>
         </div>
     </div>
 

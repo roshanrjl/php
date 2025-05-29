@@ -21,6 +21,7 @@
 </head>
 
 <body class="font-sans antialiased">
+    @include('layouts.alert')
     <div class="flex">
         <!-- Sidebar -->
         <div class="h-screen w-52 bg-blue-200 shadow-md flex-shrink-0">

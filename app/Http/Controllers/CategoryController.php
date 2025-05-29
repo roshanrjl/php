@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Controllers;
 
 use App\Models\Category;
@@ -27,7 +27,7 @@ class CategoryController extends Controller
       'name' => 'required',
     ]);
     Category::create($data);
-    return redirect()->route('categories.index');
+    return redirect()->route('categories.index')->with('success','category created successfully');
   }
 
  public function edit($id){
@@ -41,7 +41,7 @@ public function update(Request $request, $id){
   ]);
   $category = Category::find($id);
   $category->update($data);
-  return redirect()->route('categories.index');
+  return redirect()->route('categories.index')->with('success','category updated successfully');
 }
 public function destroy($id){
   Category::find($id)->delete();

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\pagesController;
 use App\Http\Controllers\ProductController;
@@ -15,9 +16,7 @@ Route::get('/contact', function () {
 })->name('contact');
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 // categories routes
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
@@ -32,6 +31,8 @@ Route::get('/product', [ProductController::class, 'productIndex'])->name('produc
 
 // order route
 Route::get('/order', [OrderController::class, 'OrderIndex'])->name('orders.orderIndex');
+
+
 
 // Route for middleware
 

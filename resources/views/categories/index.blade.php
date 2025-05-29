@@ -33,7 +33,9 @@
 
                     <td class="px-6 py-3 border-b text-right space-x-2">
                         <a href="{{route('categories.edit',$catagory->id)}}" class="text-blue-500 hover:underline">Edit</a>
-                        <a href="{{route('categories.destroy',$catagory->id)}}" class="text-blue-500 hover:underline">Delete</a>
+                        <a
+                        onclick="return confirm('are you sure to delete');"
+                        href="{{route('categories.destroy',$catagory->id)}}" class="text-blue-500 hover:underline">Delete</a>
                 
                     </td>
                 </tr>
