@@ -25,9 +25,16 @@ Route::get('/categories/{id}/edit',[CategoryController::class,'edit'])->name('ca
 Route::post('/categories/{id}/update',[CategoryController::class,'update'])->name('categories.update');
 Route::get('/categories/{id}/destroy',[CategoryController::class,'destroy'])->name('categories.destroy');
 
-// products route
+// Product routes - consistent and correct method types
 
-Route::get('/product', [ProductController::class, 'productIndex'])->name('products.productIndex');
+Route::get('/products', [ProductController::class, 'productIndex'])->name('products.index');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+Route::get('/products/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+
 
 // order route
 Route::get('/order', [OrderController::class, 'OrderIndex'])->name('orders.orderIndex');

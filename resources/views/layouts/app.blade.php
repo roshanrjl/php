@@ -15,9 +15,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+        rel="stylesheet" />
 </head>
 
 <body class="font-sans antialiased">
@@ -29,9 +28,17 @@
             <nav class="flex flex-col gap-2 px-4">
                 <a href="/dashboard" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Dashboard</a>
                 <a href="{{route('categories.index')}}" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Categories</a>
-                <a href="/product" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Product</a>
+                <a href="{{route('products.index')}}" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Product</a>
                 <a href="/order" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Orders</a>
-                <a href="/logout" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md transition-colors duration-200">Logout</a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button 
+                    onclick="return confirm('do you want to logout?');"
+                    type="submit" class="bg-blue-300 hover:bg-blue-600 hover:text-white text-black p-2 rounded-md w-full text-left">
+                        Logout
+                    </button>
+                </form>
+
             </nav>
         </div>
 
@@ -39,7 +46,7 @@
         <div class="flex-1 p-6">
             <h2 class="text-2xl font-semibold mb-4">@yield('title')</h2>
             <div class="bg-white p-4 rounded shadow">
-               <div>@yield('content')</div>
+                <div>@yield('content')</div>
             </div>
         </div>
     </div>
