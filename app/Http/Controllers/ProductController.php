@@ -2,33 +2,59 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function productIndex(){
-      
-        return view ('products.productIndex');
-    }
-    public function create( ){
-        return view('products.ProductCreate');
+    public function index()
+    {
+        return view('products.productIndex');
     }
 
-    public function store(Request $request){
+    public function create()
+    {
+        $categories = Category::orderBy('order', 'asc')->get();
+        return view('products.productCreate', compact('categories'));
+    }
+
+    public function store(Request $request)
+    {
+
         $data = $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'required',
+            'price' => 'required|numeric',
+            'category_id' => 'required',
+            'discounted_price' => 'nullable|numeric',
             'description' => 'required|string',
-            'price' => 'required|numeric|min:0',
-            'category_id' => 'required|exists:categories,id',
+            'stock' => 'required|numeric',
+            'photopath' => 'required|image'
         ]);
-     
+
+        // Handle file upload
+        $file = $request->file('photopath');
+        $fileName = time() . '.' . $file->getClientOriginalExtension();
+        $file->move(public_path('images/products'), $fileName);
+        $data['photopath'] = $fileName;
+
+        // Create the product
+        Product::create($data);
+        return redirect()->route('products.index')->with('success', 'Product Created Successfully');
     }
 
-  
+    public function edit($id)
+    {
 
-    public function edit($id){}
+    }
 
-    public function update(){}
+    public function update(Request $request, $id)
+    {
 
-    public function destroy($id){}
+    }
+
+    public function destroy($id)
+    {
+
+    }
 }

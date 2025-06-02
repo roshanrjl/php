@@ -13,6 +13,6 @@ class Product extends Model
         'discounted_price',
         'stock',
         'category_id',
-        'photopath'
-    ]
+        'photopath',
+    ];
 }

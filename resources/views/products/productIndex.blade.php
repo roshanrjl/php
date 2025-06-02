@@ -1,64 +1,34 @@
 @extends('layouts.app')
 @section('title', 'Products')
 @section('content')
-
-<body class="bg-gray-100 text-gray-800 font-sans">
-  <div class="p-6 max-w-7xl mx-auto">
-
-    <!-- Header and Add Product Button -->
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold">Products</h1>
-      <button 
-        onclick="window.location.href='{{ route("products.create") }}'"
-        class="bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2 rounded-lg transition"
-      >
-        + Add Product
-      </button>
+    <div class="flex justify-end mb-4">
+        <a href="{{route('products.create')}}" class="bg-blue-600 text-white px-4 py-2 rounded-lg ">Add Product</a>
     </div>
-
-    <!-- Products Table -->
-    <div class="bg-white shadow-md rounded-lg overflow-x-auto">
-      <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
-          <tr>
-            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Image</th>
-            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Name</th>
-            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Price</th>
-            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Description</th>
-            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Category</th>
-            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Stock</th>
-            <th class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase">Status</th>
-            <th class="px-6 py-3 text-right text-xs font-semibold text-gray-600 uppercase">Actions</th>
-          </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-100">
-          <!-- Example Product Row -->
-          <tr>
-            <td class="px-6 py-4">
-              <img src="https://via.placeholder.com/60" alt="Product Image" class="w-14 h-14 object-cover rounded-md" />
+    <table class="w-full">
+        <tr class="bg-gray-200">
+            <th class="p-2 border border-gray-50">Picture</th>
+            <th class="p-2 border border-gray-50">Product Name</th>
+            <th class="p-2 border border-gray-50">Price</th>
+            <th class="p-2 border border-gray-50">Discounted Price</th>
+            <th class="p-2 border border-gray-50">Description</th>
+            <th class="p-2 border border-gray-50">Stock</th>
+            <th class="p-2 border border-gray-50">Category</th>
+            <th class="p-2 border border-gray-50">Action</th>
+        </tr>
+        <tr class="text-center">
+            <td class="p-2 border border-gray-100">Picture</td>
+            <td class="p-2 border border-gray-100">Product Name</td>
+            <td class="p-2 border border-gray-100">100</td>
+            <td class="p-2 border border-gray-100">80</td>
+            <td class="p-2 border border-gray-100">this is description</td>
+            <td class="p-2 border border-gray-100">5</td>
+            <td class="p-2 border border-gray-100">Electronics</td>
+            <td class="p-2 border border-gray-100">
+                <a href="" class="bg-blue-600 text-white px-2 py-1 rounded-md">Edit</a>
+                <a href=""
+                    onclick="return confirm('Are you sure to delete?');"
+                    class="bg-red-600 text-white px-2 py-1 rounded-md">Delete</a>
             </td>
-            <td class="px-6 py-4">Wireless Mouse</td>
-            <td class="px-6 py-4">$25.99</td>
-            <td class="px-6 py-4">Ergonomic wireless mouse with USB receiver</td>
-            <td class="px-6 py-4">Electronics</td>
-            <td class="px-6 py-4">120</td>
-            <td class="px-6 py-4">
-              <span class="inline-flex px-2 text-xs font-medium leading-5 rounded-full bg-green-100 text-green-800">
-                Active
-              </span>
-            </td>
-            <td class="px-6 py-4 text-right">
-              <button class="text-blue-600 hover:underline mr-2">Edit</button>
-              <button class="text-red-600 hover:underline">Delete</button>
-            </td>
-          </tr>
-
-          <!-- Add more rows dynamically here -->
-        </tbody>
-      </table>
-    </div>
-
-  </div>
-</body>
-
+        </tr>
+    </table>
 @endsection
