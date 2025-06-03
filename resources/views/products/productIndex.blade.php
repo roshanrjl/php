@@ -24,7 +24,7 @@
             <td class="p-2 border border-gray-100">5</td>
             <td class="p-2 border border-gray-100">Electronics</td>
             <td class="p-2 border border-gray-100">
-                <a href="" class="bg-blue-600 text-white px-2 py-1 rounded-md">Edit</a>
+                <a href="{{route('products.edit',)}}" class="bg-blue-600 text-white px-2 py-1 rounded-md">Edit</a>
                 <a href=""
                     onclick="return confirm('Are you sure to delete?');"
                     class="bg-red-600 text-white px-2 py-1 rounded-md">Delete</a>
